@@ -1,0 +1,9 @@
+Flask
+pandas
+PyMuPDF
+pytesseract
+Pillow
+scikit-learn
+reportlab
+matplotlib
+seaborn
