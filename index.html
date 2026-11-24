@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Anomaly Detection Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Invoice AI</h2>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#invoices">Invoice Records</a>
+    <a href="#anomaly-chart">Anomaly Detection</a>
+    <a href="#reports">Reports</a>
+</div>
+
+<div class="main-content" id="dashboard">
+
+    <header>
+        <h1>Invoice Analytics Dashboard</h1>
+        <p>Automated Invoice Processing & Anomaly Detection</p>
+    </header>
+
+    <!-- Dashboard Cards -->
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Invoices</h3>
+            <h2>{{ total }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>Normal Invoices</h3>
+            <h2>{{ normal }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>Suspicious Invoices</h3>
+            <h2>{{ suspicious }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>Duplicate Invoices</h3>
+            <h2>{{ duplicates }}</h2>
+        </div>
+
+    </div>
+
+    <!-- Anomaly Insights -->
+    <div class="insights-section">
+        <h2>Anomaly Insights</h2>
+
+        <div class="card">
+            <h3>High Amount Invoices</h3>
+            <h2>{{ high_amount }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>Suspicious Invoices</h3>
+            <h2>{{ suspicious }}</h2>
+        </div>
+        <div class="card">
+    <h3>Vendor-wise Anomalies</h3>
+    <h2>{{ vendor_anomalies }}</h2>
+</div>
+    </div>
+
+    <!-- Invoice Records -->
+    <section class="table-section" id="invoices">
+
+        <h2>Invoice Records</h2>
+
+        <input type="text" id="invoiceSearch"
+               placeholder="Search invoice or vendor...">
+
+        <select id="statusFilter">
+            <option value="">All Invoices</option>
+            <option value="Normal">Normal</option>
+            <option value="Suspicious">Suspicious</option>
+        </select>
+
+        <a href="/download-report" class="download-btn">
+            Download Report
+        </a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Invoice No.</th>
+                    <th>Vendor</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for invoice in invoices %}
+                <tr>
+                    <td>{{ invoice.Invoice_No }}</td>
+                    <td>{{ invoice.Vendor }}</td>
+                    <td>{{ invoice.Date }}</td>
+                    <td>₹{{ invoice.Amount }}</td>
+                    <td>{{ invoice.Final_Status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </section>
+
+    <!-- Data Visualization -->
+    <section class="graphs" id="reports">
+
+        <h2>Data Visualization</h2>
+
+        <img src="{{ url_for('static', filename='invoice_status.png') }}" alt="Invoice Status Graph">
+
+        <img src="{{ url_for('static', filename='amount_distribution.png') }}" alt="Amount Distribution Graph">
+
+        <img id="anomaly-chart" src="{{ url_for('static', filename='ml_anomaly_results.png') }}" alt="ML Results Graph">
+
+        <img src="{{ url_for('static', filename='duplicate_analysis.png') }}" alt="Duplicate Analysis Graph">
+                <h2>Download Reports</h2>
+
+        <div class="report-buttons">
+
+            <a href="/download-report" class="download-btn">
+                Download Invoice Report
+            </a>
+
+            <a href="/download-review" class="download-btn">
+                Download Review Queue
+            </a>
+
+            <a href="/download-evaluation" class="download-btn">
+                Download Evaluation Report
+            </a>
+
+        </div>
+
+
+    </section>
+
+</div>
+
+<!-- Search and Filter -->
+<script>
+
+const searchBox = document.getElementById("invoiceSearch");
+const statusFilter = document.getElementById("statusFilter");
+
+function filterInvoices() {
+
+    let searchValue = searchBox.value.toLowerCase();
+    let statusValue = statusFilter.value.toLowerCase();
+
+    document.querySelectorAll("tbody tr").forEach(function(row) {
+
+        let rowText = row.innerText.toLowerCase();
+
+        let rowStatus = row.cells[row.cells.length - 1]
+            .innerText.toLowerCase().trim();
+
+        let matchesSearch = rowText.includes(searchValue);
+
+        let matchesStatus = !statusValue || rowStatus === statusValue;
+
+        row.style.display = matchesSearch && matchesStatus ? "" : "none";
+
+    });
+}
+
+searchBox.addEventListener("input", filterInvoices);
+statusFilter.addEventListener("change", filterInvoices);
+
+</script>
+
+</body>
+</html>

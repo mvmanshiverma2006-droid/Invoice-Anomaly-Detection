@@ -1,0 +1,22 @@
+File_Name,Invoice_No,Vendor,Date,Currency,Subtotal,Tax,Total,Amount,Missing_Fields,Extraction_Status
+invoice_1.pdf,INV-1001,ABC Technologies,2026-07-25,INR,38811.02,6985.98,45797.0,45797.0,,Complete
+invoice_10.pdf,INV-1010,Global Solutions,2026-10-13,INR,155285.59,27951.41,183237.0,183237.0,,Complete
+invoice_11.pdf,INV-1011,ABC Technologies,2026-08-11,INR,37115.25,6680.75,43796.0,43796.0,,Complete
+invoice_12.pdf,INV-1005,Smart Enterprises,2026-07-06,INR,40888.14,7359.86,48248.0,48248.0,,Complete
+invoice_13.pdf,INV-1013,Global Solutions,2026-07-20,INR,9683.05,1742.95,11426.0,11426.0,,Complete
+invoice_14.pdf,INV-1014,Smart Enterprises,2026-09-22,INR,37601.69,6768.31,44370.0,44370.0,,Complete
+invoice_15.pdf,INV-1015,Digital Services,2026-08-28,INR,149050.0,26829.0,175879.0,175879.0,,Complete
+invoice_16.pdf,INV-1016,Global Solutions,2026-10-08,INR,36477.97,6566.03,43044.0,43044.0,,Complete
+invoice_17.pdf,INV-1017,Global Solutions,2026-11-16,INR,39150.0,7047.0,46197.0,46197.0,,Complete
+invoice_18.pdf,INV-1018,ABC Technologies,2026-07-01,INR,22700.85,4086.15,26787.0,26787.0,,Complete
+invoice_19.pdf,INV-1019,Digital Services,2026-08-07,INR,33522.88,6034.12,39557.0,39557.0,,Complete
+invoice_2.pdf,INV-1002,Digital Services,2026-07-06,INR,40350.0,7263.0,47613.0,47613.0,,Complete
+invoice_20.pdf,INV-1020,Tech World,2026-09-10,INR,17929.66,3227.34,21157.0,21157.0,,Complete
+invoice_3.pdf,INV-1003,ABC Technologies,2026-08-06,INR,25430.51,4577.49,30008.0,30008.0,,Complete
+invoice_4.pdf,INV-1004,Global Solutions,2026-09-12,INR,22502.54,4050.46,26553.0,26553.0,,Complete
+invoice_5.pdf,INV-1005,Smart Enterprises,2026-09-06,INR,116111.86,20900.14,137012.0,137012.0,,Complete
+invoice_6.pdf,INV-1006,ABC Technologies,2026-07-23,INR,38354.24,6903.76,45258.0,45258.0,,Complete
+invoice_7.pdf,INV-1005,Smart Enterprises,2026-09-12,INR,4062.71,731.29,4794.0,4794.0,,Complete
+invoice_8.pdf,INV-1008,Global Solutions,2026-08-14,INR,16168.64,2910.36,19079.0,19079.0,,Complete
+invoice_9.pdf,INV-1009,Smart Enterprises,2026-05-30,INR,27049.15,4868.85,31918.0,31918.0,,Complete
+scanned_sample.pdf,OCR-2026-001,ABC Technologies,2026-11-20,INR,42857.14,2142.86,45000.0,45000.0,,Complete

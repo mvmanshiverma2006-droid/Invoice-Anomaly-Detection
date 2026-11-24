@@ -1,0 +1,51 @@
+INVOICE ANOMALY DETECTION - EVALUATION REPORT
+==================================================
+
+Total Evaluated Invoices: 20
+Accuracy: 95.00%
+Precision: 83.33%
+Recall: 100.00%
+F1 Score: 90.91%
+
+Confusion Matrix:
+[[14  1]
+ [ 0  5]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      0.93      0.97        15
+           1       0.83      1.00      0.91         5
+
+    accuracy                           0.95        20
+   macro avg       0.92      0.97      0.94        20
+weighted avg       0.96      0.95      0.95        20
+
+
+EXTRACTION ACCURACY RESULTS
+--------------------------
+Text PDF Accuracy: 100.00%
+Scanned PDF OCR Accuracy: 100.00%
+
+
+PERFORMANCE ANALYSIS
+--------------------
+1. The model correctly identified 14 normal invoices.
+2. The model correctly detected 5 suspicious invoices.
+3. One normal invoice was incorrectly flagged as suspicious.
+4. No suspicious invoice was missed.
+
+EVALUATION METHODOLOGY
+----------------------
+Anomaly detection was evaluated on 20 generated invoices.
+Text PDF extraction was evaluated on 20 generated invoices.
+Scanned PDF OCR was evaluated using one manually verified sample.
+Extraction accuracy was calculated by comparing extracted
+values with the corresponding reference values.
+
+LIMITATIONS
+-----------
+The current evaluation uses synthetic invoice data.
+The scanned PDF evaluation uses only one sample.
+A larger independent, manually verified test dataset
+is required for more reliable real-world performance evaluation.

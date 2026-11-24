@@ -1,0 +1,7 @@
+File_Name,Invoice_No,Vendor,Amount,Missing_Fields,Duplicate_Invoice,ML_Anomaly,Billing_Mismatch,Vendor_High_Amount,Anomaly_Reason,Final_Status
+invoice_10.pdf,INV-1010,Global Solutions,183237.0,,False,Normal,False,True,Invoice amount is unusually high for this vendor,Suspicious
+invoice_12.pdf,INV-1005,Smart Enterprises,48248.0,,True,Normal,False,False,Duplicate invoice from same vendor,Suspicious
+invoice_13.pdf,INV-1013,Global Solutions,11426.0,,False,Suspicious,False,False,Unusually high or abnormal invoice amount,Suspicious
+invoice_15.pdf,INV-1015,Digital Services,175879.0,,False,Normal,False,True,Invoice amount is unusually high for this vendor,Suspicious
+invoice_5.pdf,INV-1005,Smart Enterprises,137012.0,,True,Suspicious,False,True,Duplicate invoice from same vendor; Unusually high or abnormal invoice amount; Invoice amount is unusually high for this vendor,Suspicious
+invoice_7.pdf,INV-1005,Smart Enterprises,4794.0,,True,Suspicious,False,False,Duplicate invoice from same vendor; Unusually high or abnormal invoice amount,Suspicious
