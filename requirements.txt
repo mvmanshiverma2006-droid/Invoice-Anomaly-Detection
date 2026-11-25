@@ -7,3 +7,4 @@ scikit-learn
 reportlab
 matplotlib
 seaborn
+gunicorn
